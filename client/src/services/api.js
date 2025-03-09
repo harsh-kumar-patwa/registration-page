@@ -4,7 +4,6 @@ const API_BASE_URL = 'https://registration-page-backend-1.onrender.com/';
 
 const api = axios.create({
     baseURL: API_BASE_URL,
-    withCredentials: true,
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -14,7 +13,7 @@ const api = axios.create({
 // Add request interceptor
 api.interceptors.request.use(
     (config) => {
-        config.headers['Access-Control-Allow-Origin'] = 'true';
+        config.headers['Access-Control-Allow-Origin'] = '*';
         return config;
     },
     (error) => {
