@@ -12,7 +12,7 @@ const db = process.env.MONGODB_URI;
 // Middleware
 app.use(cors(
   {
-    origin: 'https://registration-page-finacplus.vercel.app/' 
+    origin: 'https://registration-page-finacplus.vercel.app' 
   }
 )); 
 app.use(express.json()); 
