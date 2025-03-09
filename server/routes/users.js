@@ -77,7 +77,7 @@ router.get('/:id', async (req, res) => {
 // Update (PUT - Update User by ID)
 router.put('/:id', async (req, res) => {
     try {
-        const { name, age, dateOfBirth, password, gender, about } = req.body;
+        const { name, age, dateOfBirth, gender, about } = req.body;
 
          // Basic Validation (you should use a validation library like Joi for more robust checks)
         if (!name || !age || !dateOfBirth || !gender) {
@@ -88,16 +88,11 @@ router.put('/:id', async (req, res) => {
             return res.status(400).json({ message: 'Invalid date format' });
         }
         //check the password
-        const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d).+$/;
-        if (!passwordRegex.test(password)) {
-          return res.status(400).json({ message: 'Password must be alphanumeric and contain at least one digit' });
-        }
 
         const updatedUser = await User.findByIdAndUpdate(req.params.id, {
             name,
             age,
             dateOfBirth,
-            password,
             gender,
             about
         }, { new: true }); 
