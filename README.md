@@ -25,8 +25,8 @@ This project implements a user registration system with a React.js frontend, a N
 1.  **Clone the repository (replace with your repository URL):**
 
     ```bash
-    git clone <your-repository-url>
-    cd <your-project-directory>/server
+    git clone https://github.com/harsh-kumar-patwa/registration-page/
+    cd registration-page/server
     ```
 
 2.  **Install backend dependencies:**
