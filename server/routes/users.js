@@ -80,7 +80,7 @@ router.put('/:id', async (req, res) => {
         const { name, age, dateOfBirth, password, gender, about } = req.body;
 
          // Basic Validation (you should use a validation library like Joi for more robust checks)
-        if (!name || !age || !dateOfBirth || !password || !gender) {
+        if (!name || !age || !dateOfBirth || !gender) {
             return res.status(400).json({ message: 'Missing required fields' });
         }
          // Check if the date is valid
